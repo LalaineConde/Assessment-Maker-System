@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     
+    <title><?php echo $page_title; ?></title>
+    
+
+<style type="text/css">
+    
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+body{
+
+        background: #DED4E8;
+        background-attachment: fixed;
+}
+
+header {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    padding: 20px 100px;
+    background-color: #C7395F;
+    border-bottom: 1px solid #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 200;
+}
+
+.logo_container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 90px;
+    height: 100px;
+    margin-right: 10px;
+}
+
+h1 {
+    font-size: 24px; 
+    color: #fff; 
+}
+
+ul {
+    list-style: none;
+    display: inline-block;
+}
+
+ul li {
+    display: inline-block;
+    position: relative;
+}
+
+ul li a {
+    display: block;
+    padding: 10px 25px;
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+    font-size: 16px;
+}
+
+ul li ul.dropdown li {
+    display: block;
+}
+
+ul li ul.dropdown {
+    width: 100%;
+    background: #000067;
+    position: absolute;
+    z-index: 999;
+    display: none;
+}
+
+ul li a:hover {
+    border-radius: 10px;
+    background: #FCF8E3;
+    color: #C7395F;
+}
+
+ul li:hover ul.dropdown {
+    display: block;
+}
+
+@media(max-width: 1000px){
+    header{
+        padding: 10px 20px;
+
+    }
+
+    header nav{
+        position: absolute;
+        width: 100%;
+        top: 90px;
+        left: 0;
+       
+        background: #C7395F;
+        display: none;
+    }
+
+    header.active nav{
+        display: initial;
+    }
+    header nav ul {
+        width: 100%;
+        
+
+    }
+
+    header nav ul li{
+        width: 100%;
+        margin: 5px 0;
+
+    }
+
+    
+
+    header nav ul li ul.dropdown{
+        position: relative;
+        width: 100%;
+        left: 0;
+    } 
+
+    header nav ul li ul.dropdown{
+        top: 0;
+        left: 0;
+    }
+
+    header nav ul li:hover ul.dropdown li{
+        background: #FCF8E3;
+        color: #C7395F;
+    }
+
+     .menuToggle{
+        position: relative;
+        width: 40px;
+        height: 50px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+    .menuToggle::before{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background: #ffffff;
+        transform: translateY(-12px);
+        box-shadow: 0 12px #ffffff;
+    }
+
+    .menuToggle::after{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background: #ffffff;
+        transform: translateY(12px);
+        
+    }
+    
+    header.active .menuToggle::before{
+        transform: rotate(45deg);
+        box-shadow: 0 0 #ffffff;
+    }
+  
+    header.active .menuToggle::after{
+        transform: rotate(315deg);
+        
+    }
+
+    @media (max-width: 590px) {
+    .logo_container{
+        margin-left: -10px;
+        
+    }
+
+    h1{
+        margin-left: -10px;
+    }
+
+}
+}
+</style>
+
+</head>
+<body>
+    <header>
+
+        <div class="logo_container">
+        <img src="logo.png" class="logo" alt=" NU Logo"> 
+        <h1>TIME FLOW</h1>
+    </div>
+
+    <div class="menuToggle"> </div>        
+
+<nav>
+    <ul>
+        
+        <li><a href="create-tasks.php">ADD TASK</a></li>
+        <li><a href="view-tasks.php">VIEW TASKS</a></li>
+        <li><a href="create-event.php">ADD EVENT</a></li>
+        <li><a href="view-event.php">VIEW EVENTS</a></li>
+        <li><a href="calendar-view.php">CALENDAR</a></li>
+    </ul>
+</nav>
+    
+       
+
+    </header>
+
+
+</body>
+</html>
